@@ -6,10 +6,6 @@ from PIL import Image
 from args import Arguments
 
 
-# import Image
-
-
-
 def init():
     args = Arguments()
     files_count: int = 0
