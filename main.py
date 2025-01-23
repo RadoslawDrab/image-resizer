@@ -21,7 +21,7 @@ def init():
         files: list[Path] = [f for f in sorted(Path.glob(Path(directory), '**/*' if args.recursive else '*')) if not re.search(f'.{args.suffix}{f.suffix}', f.name)]
         for file in files:
             # Includes only specific file types
-            if not any([file.suffix.endswith(t) for t in args.file_types]):
+            if not any([file.suffix.lower().endswith(t.lower()) for t in args.file_types]):
                 continue
 
             [*file_names, _] = file.name.split('.')
